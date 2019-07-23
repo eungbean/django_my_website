@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+
+<h1>This is my website.</h1>
+
+
+{% for p in object_list %}
+
+<h3>{{p}}</h3>
+<h4>{{p.created}} by {{p.author}}</h4>
+<p>{{p.content}}</p>
+
+
+
+{% endfor %}
+
+</body>
+</html>
