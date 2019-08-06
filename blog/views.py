@@ -13,7 +13,7 @@ from .models import Post
 #     )
 
 
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 
 class PostList(ListView):
@@ -21,3 +21,17 @@ class PostList(ListView):
 
     def get_queryset(self):
         return Post.objects.order_by('-created')
+
+
+# def post_detail(request, pk):
+#     blog_post = Post.objects.get(pk=pk)
+#     return render(
+#         request,
+#         'blog/post_detail.html',
+#         {
+#             'blog_post': blog_post,
+#         }
+#     )
+
+class PostDetail(DetailView):
+    model = Post
